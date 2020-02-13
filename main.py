@@ -25,4 +25,3 @@ def create_files():
     def python_project():
     	standar.append("hello.py")
     	for x in standar:f = open(f"{x}","w")
-
