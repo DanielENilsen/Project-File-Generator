@@ -12,21 +12,10 @@ def create_files():
     def standar_project():
     	standar = ["index.html","style.css","script.js"]
     	for x in standar:f = open(f"{x}", "w")
+    standar_project()
     
 
     def python_project():
     	standar.append("hello.py")
     	for x in standar:f = open(f"{x}","w")
-
-
-    #standar_project()
-    python_project()
-
-
-    	
-
-
-
-
-create_files()
 
