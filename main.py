@@ -2,16 +2,23 @@ import os
 
 
 
-
-
 def create_files():
-    cwd = os.getcwd()
+    cwd = "C:\Semester"
     standar = ["index.html","style.css","script.js"]
+
+    def create_dir(folder):
+    	try:
+    		if not os.path.exists(folder):
+    			os.mkdir(folder)
+    	except OSError:
+    		print("Folder exist")
 
 
     def standar_project():
+    	os.chdir(cwd)
+    	create_dir("Home")
     	standar = ["index.html","style.css","script.js"]
-    	for x in standar:f = open(f"{x}", "w")
+    	#for x in standar:f = open(f"{x}", "w")
     standar_project()
     
 
