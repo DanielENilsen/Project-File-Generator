@@ -5,7 +5,10 @@ from main import create_files
 
 
 def file_dialog(event):
-	root.filename = filedialog.askopenfilename()
+	try:
+		root.filename = filedialog.askopenfilename()
+	except OSError:
+		print("Error")
 
 def submit_button():
 	create_files()
