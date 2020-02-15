@@ -1,14 +1,10 @@
 from tkinter import*
 from tkinter import ttk
 from tkinter import filedialog
-from main import create_files
+from main import create_files,file_dialog
 
 
-def file_dialog(event):
-	try:
-		root.filename = filedialog.askopenfilename()
-	except OSError:
-		print("Error")
+
 
 def submit_button():
 	create_files()
@@ -19,8 +15,7 @@ def Gui_launch():
 	root.geometry("400x200")
 	root.resizable(False,False)
 
-	btn = ttk.Button(root, text= "Choose Folder")
-	btn.bind("<Button-1>",file_dialog)
+	btn = ttk.Button(root, text= "Choose Folder",command = file_dialog)	
 	btn.pack()
 
 	String_var = StringVar()

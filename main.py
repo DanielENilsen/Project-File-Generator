@@ -1,9 +1,14 @@
 import os
+from tkfilebrowser import askopendirname 
 
+ecoh = ""
 
-
-def create_files():
-    cwd = "C:\Semester"
+def file_dialog(file):
+    folder_selected  = askopendirname(title="Choose your directory")
+    print(folder_selected)
+    return 	folder_selected
+	
+def create_files():    
     standar = ["index.html","style.css","script.js"]
 
     def create_dir(folder):
@@ -14,8 +19,10 @@ def create_files():
     		print("Folder exist")
 
 
+
     def standar_project():
-    	os.chdir(cwd)
+    	folder = file_dialog(ecoh)
+    	os.chdir(folder)
     	create_dir("Home")
     	standar = ["index.html","style.css","script.js"]
     	#for x in standar:f = open(f"{x}", "w")
