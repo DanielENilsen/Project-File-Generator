@@ -3,11 +3,13 @@ from tkfilebrowser import askopendirname
 
 ecoh = ""
 
-def file_dialog(file):
-    folder_selected  = askopendirname(title="Choose your directory")
-    print(folder_selected)
-    return 	folder_selected
-	
+def fold_select(folder):
+	folder = askopendirname(title="Choose your directory")
+	return folder 
+
+
+
+
 def create_files():    
     standar = ["index.html","style.css","script.js"]
 
@@ -21,8 +23,8 @@ def create_files():
 
 
     def standar_project():
-    	folder = file_dialog(ecoh)
-    	os.chdir(folder)
+    	folder = fold_select()
+     	os.chdir(folder)
     	create_dir("Home")
     	standar = ["index.html","style.css","script.js"]
     	#for x in standar:f = open(f"{x}", "w")

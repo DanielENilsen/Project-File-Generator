@@ -1,7 +1,7 @@
 from tkinter import*
 from tkinter import ttk
 from tkinter import filedialog
-from main import create_files,file_dialog
+from main import create_files
 
 
 
@@ -15,7 +15,7 @@ def Gui_launch():
 	root.geometry("400x200")
 	root.resizable(False,False)
 
-	btn = ttk.Button(root, text= "Choose Folder",command = file_dialog)	
+	btn = ttk.Button(root, text= "Choose Folder",command = standar_project)	
 	btn.pack()
 
 	String_var = StringVar()
