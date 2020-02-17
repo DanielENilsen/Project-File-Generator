@@ -1,33 +1,42 @@
-from tkinter import*
+import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
-from main import create_files
+from tkinter import messagebox
+import os 
 
 
+class File_Gui(tk.Tk):
+    
+	def __init__(self):
+		tk.Tk.__init__(self)
+		self.title = "File Generator"
+		self.geometry("400x200")
+		self.resizable(False,False)
+		self.StringVar = tk.StringVar()
+		self.combo = ttk.Combobox(self,textvariable = self.StringVar,values=["Standard", "Bootstrap", "SASS"]).pack()	
+		self.name_entry = ttk.Entry(self).pack()
+		self.buttonTwo = ttk.Button(self,text="Create Folder", command = self.create_folder).pack()
 
+		
 
-def submit_button():
-	create_files()
+	def create_folder(self):
+		self.filename = filedialog.askdirectory()
+		
 
-
-def Gui_launch():
-	root = Tk()
-	root.geometry("400x200")
-	root.resizable(False,False)
-
-	btn = ttk.Button(root, text= "Choose Folder",command = standar_project)	
-	btn.pack()
-
-	String_var = StringVar()
-	Select_projects = ttk.Combobox(root, textvariable = String_var,values=["Standard", "Bootstrap", "SASS"]).pack()
+		try:
+			self.find = os.chdir(self.filename)
+			self.createFolder = os.mkdir("Project")
+			self.openFolder = os.startfile(f"{self.filename}\\Project")
+		
+		except:
+			self.errormes = messagebox.showerror("Error", "The are an existing folder")
+		
 	
-	submit = ttk.Button(root,text = "Create Folder",command=submit_button)
-	submit.place(x=150,y=80)
 
-	name_entry = ttk.Entry(root)
-	name_entry.place(x=120,y=100)
 
-	root.mainloop()
+if __name__ == "__main__":	
 
-if __name__ == "__main__":
-	Gui_launch()
+	Gui = File_Gui()
+	Gui.mainloop()
+
+
