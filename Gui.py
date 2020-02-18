@@ -16,6 +16,7 @@ class File_Gui(tk.Tk):
 		self.combo = ttk.Combobox(self,textvariable = self.StringVar,values=["Standard", "Bootstrap", "SASS"]).pack()	
 		self.name_entry = ttk.Entry(self).pack()
 		self.buttonTwo = ttk.Button(self,text="Create Folder", command = self.create_folder).pack()
+		self.checbtnOne = ttk.Checkbutton(self,text="Lagre project").pack()
 
 		
 
