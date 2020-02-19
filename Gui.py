@@ -29,11 +29,17 @@ class File_Gui(tk.Tk):
 			self.find = os.chdir(self.filename)
 			self.createFolder = os.mkdir("Project")
 			self.openFolder = os.startfile(f"{self.filename}\\Project")
+			self.find = os.chdir(f"{self.filename}\\Project")
+			self.indexfile = open("index.html","w")
+
 
 			if self.intvar.get() == 1:
 				self.find = os.chdir(f"{self.filename}\\Project")		
-				self.createFolder = os.mkdir("Script"),os.mkdir("CSS")
-
+				self.createFolder = os.mkdir("scripts"),os.mkdir("css")
+				self.find = os.chdir(f"{self.filename}\\Project\\css")
+				self.cssFile = open("style.css","w")
+				self.find = os.chdir(f"{self.filename}\\Project\\scripts")
+				self.js_file = open("script.js","w")
 	
 		except:
 			self.errormes = messagebox.showerror("Error", "The are an existing folder")
